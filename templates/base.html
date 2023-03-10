@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLINEShOPP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            <h1>Ecom</h1>
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+            Store
+            </a>
+      
+            
+                <hr class="navbar-divider">
+                
+              </div>
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-warning">
+                  <strong>Login</strong>
+                </a>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>  
+  <div class="container"> <br><br>
+    <div class="columns is-multiline">
+     {% for product in products %}
+      <div class="column is-4">
+        <div class="box">
+          <figure class="image">
+            <img src="{{product.image.url}}" alt="">
+            
+          </figure>
+          <h1 class="title is-size-5">{{product.name}}</h1>
+          <hr>
+          <div class="columns">
+            <div class="column is-9"> 
+              <a href=""><button  class="button" type="submit"><h2 class="is-family-sans-serif"> Add to Card</h2></button></a> 
+              <a href=""><button  class="button is-primary is-outlined" type="submit"> View</button></a> 
+            </div>
+            <div class="column">
+              $ {{product.price}}.99
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <div class="column">
+        <div class="box">
+          
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="box">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+      
+</body>
+</html>
